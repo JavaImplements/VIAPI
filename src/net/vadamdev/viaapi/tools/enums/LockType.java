@@ -1,8 +1,8 @@
 package net.vadamdev.viaapi.tools.enums;
 
-import net.minecraft.server.v1_8_R3.EntityArmorStand;
+import net.minecraft.server.v1_12_R1.EntityArmorStand;
 import net.vadamdev.viaapi.tools.packet.Reflection;
-import org.bukkit.craftbukkit.v1_8_R3.entity.CraftArmorStand;
+import org.bukkit.craftbukkit.v1_12_R1.entity.CraftArmorStand;
 import org.bukkit.entity.ArmorStand;
 
 public enum LockType {

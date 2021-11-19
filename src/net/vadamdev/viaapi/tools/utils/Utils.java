@@ -2,11 +2,10 @@ package net.vadamdev.viaapi.tools.utils;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import net.minecraft.server.v1_8_R3.NBTTagCompound;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
-import org.bukkit.craftbukkit.v1_8_R3.entity.CraftEntity;
+import org.bukkit.craftbukkit.v1_12_R1.entity.CraftEntity;
 import org.bukkit.entity.Entity;
 
 import java.io.IOException;
@@ -66,20 +65,9 @@ public class Utils {
         return loc.getWorld().getName()+":"+loc.getBlockX()+":"+loc.getBlockY()+":"+loc.getBlockZ()+":"+loc.getYaw()+":"+loc.getPitch();
     }
 
-    public static void setNoAI(Entity entity) {
-        net.minecraft.server.v1_8_R3.Entity nmsEntity = ((CraftEntity) entity).getHandle();
-
-        NBTTagCompound tag = nmsEntity.getNBTTag();
-        if (tag == null) tag = new NBTTagCompound();
-
-        nmsEntity.c(tag);
-        tag.setInt("NoAI", 1);
-        nmsEntity.f(tag);
-    }
-
     public static void setSilent(Entity entity) {
-        net.minecraft.server.v1_8_R3.Entity e = ((CraftEntity) entity).getHandle();
-        if(!e.R()) e.b(true);
+        net.minecraft.server.v1_12_R1.Entity e = ((CraftEntity) entity).getHandle();
+        if(!e.isSilent()) e.setSilent(true);
     }
 
     public static List<Entity> getEntitiesAroundPoint(Location location, double radius) {

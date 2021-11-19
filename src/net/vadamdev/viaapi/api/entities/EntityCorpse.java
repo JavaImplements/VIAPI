@@ -1,11 +1,11 @@
 package net.vadamdev.viaapi.api.entities;
 
-import net.minecraft.server.v1_8_R3.*;
+import net.minecraft.server.v1_12_R1.*;
 import net.vadamdev.viaapi.tools.packet.Reflection;
 import net.vadamdev.viaapi.tools.utils.Utils;
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.craftbukkit.v1_8_R3.inventory.CraftItemStack;
+import org.bukkit.craftbukkit.v1_12_R1.inventory.CraftItemStack;
 import org.bukkit.entity.Player;
 
 public class EntityCorpse {
@@ -53,10 +53,10 @@ public class EntityCorpse {
         Reflection.sendPacket(player, new PacketPlayOutEntity.PacketPlayOutRelEntityMove(id, (byte) 0, (byte) 4, (byte) 0, false));
 
         if(equipped) {
-            Reflection.sendPacket(player, new PacketPlayOutEntityEquipment(id, 4, CraftItemStack.asNMSCopy(owner.getEquipment().getHelmet())));
-            Reflection.sendPacket(player, new PacketPlayOutEntityEquipment(id, 3, CraftItemStack.asNMSCopy(owner.getEquipment().getChestplate())));
-            Reflection.sendPacket(player, new PacketPlayOutEntityEquipment(id, 2, CraftItemStack.asNMSCopy(owner.getEquipment().getLeggings())));
-            Reflection.sendPacket(player, new PacketPlayOutEntityEquipment(id, 1, CraftItemStack.asNMSCopy(owner.getEquipment().getBoots())));
+            Reflection.sendPacket(player, new PacketPlayOutEntityEquipment(id, EnumItemSlot.HEAD, CraftItemStack.asNMSCopy(owner.getEquipment().getHelmet())));
+            Reflection.sendPacket(player, new PacketPlayOutEntityEquipment(id, EnumItemSlot.CHEST, CraftItemStack.asNMSCopy(owner.getEquipment().getChestplate())));
+            Reflection.sendPacket(player, new PacketPlayOutEntityEquipment(id, EnumItemSlot.LEGS, CraftItemStack.asNMSCopy(owner.getEquipment().getLeggings())));
+            Reflection.sendPacket(player, new PacketPlayOutEntityEquipment(id, EnumItemSlot.FEET, CraftItemStack.asNMSCopy(owner.getEquipment().getBoots())));
         }
     }
 

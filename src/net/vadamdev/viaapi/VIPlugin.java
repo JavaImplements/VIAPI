@@ -1,6 +1,6 @@
 package net.vadamdev.viaapi;
 
-import net.minecraft.server.v1_8_R3.MinecraftServer;
+import net.minecraft.server.v1_12_R1.MinecraftServer;
 import net.vadamdev.viaapi.startup.APIVersion;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;

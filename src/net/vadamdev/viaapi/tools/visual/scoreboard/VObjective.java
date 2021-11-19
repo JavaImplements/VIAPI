@@ -1,10 +1,10 @@
 package net.vadamdev.viaapi.tools.visual.scoreboard;
 
 
-import net.minecraft.server.v1_8_R3.IScoreboardCriteria;
-import net.minecraft.server.v1_8_R3.PacketPlayOutScoreboardDisplayObjective;
-import net.minecraft.server.v1_8_R3.PacketPlayOutScoreboardObjective;
-import net.minecraft.server.v1_8_R3.PacketPlayOutScoreboardScore;
+import net.minecraft.server.v1_12_R1.IScoreboardCriteria;
+import net.minecraft.server.v1_12_R1.PacketPlayOutScoreboardDisplayObjective;
+import net.minecraft.server.v1_12_R1.PacketPlayOutScoreboardObjective;
+import net.minecraft.server.v1_12_R1.PacketPlayOutScoreboardScore;
 import net.vadamdev.viaapi.tools.packet.Reflection;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;

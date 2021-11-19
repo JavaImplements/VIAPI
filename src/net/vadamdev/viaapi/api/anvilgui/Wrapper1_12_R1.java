@@ -1,18 +1,18 @@
 package net.vadamdev.viaapi.api.anvilgui;
 
-import net.minecraft.server.v1_8_R3.*;
-import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
-import org.bukkit.craftbukkit.v1_8_R3.event.CraftEventFactory;
+import net.minecraft.server.v1_12_R1.*;
+import org.bukkit.craftbukkit.v1_12_R1.entity.CraftPlayer;
+import org.bukkit.craftbukkit.v1_12_R1.event.CraftEventFactory;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 
 /**
- * {@link VersionWrapper} implemented for NMS version 1_8_R3
+ * {@link VersionWrapper} implemented for NMS version 1_12_R1
  *
  * @author Wesley Smith
- * @since 1.0
+ * @since 1.1.1
  */
-public class Wrapper1_8_R3 implements VersionWrapper {
+public class Wrapper1_12_R1 implements VersionWrapper {
 
     /**
      * {@inheritDoc}
@@ -91,7 +91,7 @@ public class Wrapper1_8_R3 implements VersionWrapper {
      */
     @Override
     public Object newContainerAnvil(Player player, String guiTitle) {
-        return new AnvilContainer(toNMS(player));
+        return new Wrapper1_12_R1.AnvilContainer(toNMS(player));
     }
 
     /**
@@ -111,15 +111,21 @@ public class Wrapper1_8_R3 implements VersionWrapper {
 
         public AnvilContainer(EntityHuman entityhuman) {
             super(entityhuman.inventory, entityhuman.world, new BlockPosition(0, 0, 0), entityhuman);
+            this.checkReachable = false;
         }
 
         @Override
-        public boolean a(EntityHuman human) {
-            return true;
+        public void e() {
+            super.e();
+            this.levelCost = 0;
         }
 
         @Override
         public void b(EntityHuman entityhuman) {
+        }
+
+        @Override
+        protected void a(EntityHuman entityhuman, World world, IInventory iinventory) {
         }
 
     }
